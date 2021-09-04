@@ -9,9 +9,9 @@ namespace LogicaPrograms
             int a = 0, b = 1, c = 0;
             if (terms == 0)
             {
-                Console.Write(a +" ");
+                Console.Write(a);
             }
-            for (int i = 2; i <= terms; i++)
+            for (int i = 1; i <= terms; i++)
             {
                 c = a + b;
                 a = b;
