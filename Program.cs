@@ -4,27 +4,33 @@ namespace LogicaPrograms
 {
     class Program
     {
-        public static void fibSeries(int terms)
+        public static bool PerfectNumber(int num)
         {
-            int a = 0, b = 1, c = 0;
-            if (terms == 0)
+            int sum = 0;
+            for (int i = 1; i<num; i++)
             {
-                Console.Write(a);
+                if (num % i == 0)
+                {
+                    sum = sum + i;
+                }
             }
-            for (int i = 1; i <= terms; i++)
-            {
-                c = a + b;
-                a = b;
-                b = c;
-                Console.Write(b +" ");
-            }
+            if (sum == num)
+                return true;
+            return false;
         }
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Logica Programs");
-            Console.WriteLine("Enter the num of terms of fibonacci series");
-            int terms = Convert.ToInt32(Console.ReadLine());
-            fibSeries(terms);
+            Console.WriteLine("Enter a num ");
+            int num = Convert.ToInt32(Console.ReadLine());
+            if (PerfectNumber(num))
+            {
+                Console.WriteLine(num + " is a perfect number");
+            }
+            else
+            {
+                Console.WriteLine(num + " is not a perfect number");
+            }
         }
     }
 }
