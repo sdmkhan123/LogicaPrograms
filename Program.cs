@@ -4,33 +4,22 @@ namespace LogicaPrograms
 {
     class Program
     {
-        static bool toCheckPrime(int num)
+        static int reversNumber(int num)
         {
-            if (num <= 1)
-                return false;
-            for (int i = 2; i < num; i++)
+            int revNnum = 0;
+            while (num > 0)
             {
-                if (num % i == 0)
-                {
-                    return false;
-                }
+                revNnum = revNnum * 10 + num % 10;
+                num = num / 10;
             }
-            return true;
+            return revNnum;
         }
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Logica Programs");
             Console.WriteLine("Enter a num ");
             int num = Convert.ToInt32(Console.ReadLine());
-            if (toCheckPrime(num))
-            {
-                Console.Write(num + " is a Prime number");
-            }
-
-            else
-            {
-                Console.Write(num + " is not a prime number");
-            }
+            Console.Write("Reverse of " + num + " is " + reversNumber(num));
         }
     }
 }
